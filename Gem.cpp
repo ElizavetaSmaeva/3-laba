@@ -23,16 +23,12 @@ void Gem::SetColor(sf::Color newColor) {
 }
 
 void Gem::SetSelected() { 
-	// ôóíêöèÿ äëÿ óñòàíîâêè âûäåëåíèÿ ãåìà ïðè íàæàòèè (äåëàåò öâåò ïðîçðà÷íåå)
-
 	isSelected_ = true;
 	originalColor_ = color_;
 	color_ = sf::Color(color_.r, color_.g, color_.b, 200);
 }
 
 void Gem::SetDeselected() {
-	// ôóíêöèÿ äëÿ ñíÿòèÿ âûäåëåíèÿ ãåìà, âîçâðàùàåò èñõîäíûé öâåò ãåìó
-
 	isSelected_ = false;
 	color_ = originalColor_;
 }
@@ -68,8 +64,6 @@ bool Gem::GetMarker() {
 }
 
 sf::Color Gem::ChoiceColor() {
-	// ôóíêöèÿ äëÿ âûáîðà öâåòà ãåìà ïðè åãî ñîçäàíèè
-
 	switch (std::rand() % 6) {
 	case 0:
 		return sf::Color::Red;
