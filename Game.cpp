@@ -7,6 +7,12 @@
 #include <cstdlib>
 
 
+#include <SFML/Graphics.hpp>
+#include "Game.hpp"
+#include <iostream>
+#include <cmath>
+#include <cstdlib>
+
 Game::Game(int width, int height) {
     width_ = width;
     height_ = height;
@@ -128,11 +134,7 @@ void Game::Run(Board& board) {
                 sf::sleep(sf::seconds(1.5f));
                 bomb.ActionBomb(window, board);
             }     
-
-            while (board.IsFoundCombinatioins()) {
-                board.Update(window);
-            }
-
+       
             board.Draw(window);
             window.draw(lines);
             window.display();
